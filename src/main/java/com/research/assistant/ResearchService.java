@@ -1,16 +1,26 @@
 package com.research.assistant;
 
+import java.util.Map;
+
 public class ResearchService {
     public String processContent(ReseachRequest request) {
-    //     query the AI model with prompt and get the response and retrun as String
     //     Build the prompt
+        String prompt = buildPrompt(request);
     //     query the AI model API
+        Map<String, Object> requestBody = Map.of(
+                "contents", new Object[]{
+                        Map.of("parts", new Object[]{
+                                Map.of("text", prompt)
+                        })
+                }
+        );
+
     //     Parse the response
     //     return response
 
     }
 
-    private String buildPromt(ReseachRequest request){
+    private String buildPrompt(ReseachRequest request){
         StringBuilder prompt = new StringBuilder();
         switch (request.getOperation()){
             case "Summerize":
