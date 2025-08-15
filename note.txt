@@ -1,0 +1,2 @@
+before run in intellij:
+settings>Build,Execution,display> compiler> annotation processing> select project and select Obtain processes from project classpath
