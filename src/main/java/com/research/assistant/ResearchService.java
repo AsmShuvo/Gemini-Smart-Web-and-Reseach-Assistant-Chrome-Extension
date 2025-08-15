@@ -67,14 +67,10 @@ public class ResearchService {
 
         switch (op) {
             case "summarize":
-            case "summary":
-            case "summarise":   // UK
-            case "summerize":   // common typo
-                return "Provide a clear and concise summary of the following text in a few sentences:\n\n"
+                return "Provide a clear and concise summary of the following text in a few bullets:\n\n"
                         + request.getContent();
 
             case "suggest":
-            case "suggestions":
                 return "Based on the following content, suggest related topics and further reading. "
                         + "Format the response with clear headings and bullet points:\n\n"
                         + request.getContent();
